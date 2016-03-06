@@ -34,9 +34,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-	<UpdateAssemblyInfo>true</UpdateAssemblyInfo>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,8 +67,6 @@
 	-->
   </Target>
   <Target Name="AfterBuild">
-	<Message Text="GitVersion_InformationalVersion: $(GitVersion_InformationalVersion)"/>
-	<Message Text="GitVersion_UpdateAssemblyInfo: $(GitVersion_UpdateAssemblyInfo)"/>
-	<Message Text="GitVersion_Mode: $(GitVersion_Mode)"/>	
+	<Message Text="GitVersion_InformationalVersion: $(GitVersion_InformationalVersion)" Importance="High"/>
   </Target>
 </Project>
