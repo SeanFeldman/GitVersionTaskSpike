@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+	<UpdateAssemblyInfo>true</UpdateAssemblyInfo>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,11 +63,15 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+  
   <Target Name="BeforeBuild">
+	<!--
+	<GetVersion SolutionDirectory="$(SolutionDir)" />
+	-->
   </Target>
   <Target Name="AfterBuild">
+	<Message Text="GitVersion_InformationalVersion: $(GitVersion_InformationalVersion)"/>
+	<Message Text="GitVersion_UpdateAssemblyInfo: $(GitVersion_UpdateAssemblyInfo)"/>
+	<Message Text="GitVersion_Mode: $(GitVersion_Mode)"/>	
   </Target>
-  -->
 </Project>
