@@ -12,18 +12,18 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            var assembly = Assembly.GetEntryAssembly();
             var assemblyName = assembly.GetName().Name;
             var gitVersionInformationType = assembly.GetType(assemblyName + ".GitVersionInformation");
             var fields = gitVersionInformationType.GetFields();
 
             foreach (var field in fields)
             {
-                Trace.WriteLine(string.Format("{0}: {1}", field.Name, field.GetValue(null)));
+                Console.WriteLine($"{field.Name}: {field.GetValue(null)}");
             }
 
             var versionField = gitVersionInformationType.GetField("Minor");
-            Trace.WriteLine(versionField.GetValue(null));
+            Console.WriteLine(versionField.GetValue(null));
 
             Console.ReadLine();
         }
