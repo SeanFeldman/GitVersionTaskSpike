@@ -1,5 +1,2 @@
 assembly-versioning-scheme: MajorMinor
 mode: ContinuousDeployment
-branches:
-  master:
-    increment: Patch
