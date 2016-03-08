@@ -7,6 +7,7 @@ namespace TestApp
     {
         static void Main()
         {
+            //
             var assembly = Assembly.GetEntryAssembly();
             var assemblyName = assembly.GetName().Name;
             var gitVersionInformationType = assembly.GetType(assemblyName + ".GitVersionInformation");
