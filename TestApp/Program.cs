@@ -5,7 +5,7 @@ namespace TestApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var assembly = Assembly.GetEntryAssembly();
             var assemblyName = assembly.GetName().Name;
